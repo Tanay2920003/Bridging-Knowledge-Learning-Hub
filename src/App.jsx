@@ -1,4 +1,8 @@
 import { useEffect, useRef } from "react";
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import LandingPage from "./components/LandingPage";
 import "./App.css";
 
 function App() {
@@ -7,15 +11,15 @@ function App() {
   useEffect(() => {
     const vantaEffect = window.VANTA.BIRDS({
       el: vantaRef.current,
-      THREE: window.THREE, // Access THREE.js globally
+      THREE: window.THREE,
       mouseControls: true,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  colorMode: "lerp",
-  birdSize: 1.80,
-  separation: 40.00,
-  alignment: 45.00,
-  quantity: 2.00
+      scale: 1.0,
+      scaleMobile: 1.0,
+      colorMode: "lerp",
+      birdSize: 1.8,
+      separation: 40.0,
+      alignment: 45.0,
+      quantity: 2.0,
     });
 
     return () => {
@@ -24,12 +28,15 @@ function App() {
   }, []);
 
   return (
-    <div ref={vantaRef} className="vanta-bg">
-      <div className="content">
-        <h1>Vite + React + Vanta</h1>
-        <p>Enjoy the birds effect!</p>
+      <div ref={vantaRef} className="vanta-bg">
+        <div className="content-container">
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/landing" element={<LandingPage />} />
+          </Routes>
+        </div>
       </div>
-    </div>
   );
 }
 
