@@ -34,7 +34,7 @@ const TasksPage = () => {
 
                 {/* Permanent Events */}
                 <div className="permanent-events">
-                    <h2>Permanent Events</h2>
+                    <h2>-- Assigned Tasks --</h2>
                     <ul>
                         {permanentEvents.map((event) => (
                             <li key={event.id} className="event-item">
