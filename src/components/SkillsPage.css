@@ -1,0 +1,121 @@
+/* Skills Page */
+.skills-page {
+     padding: 20px;
+     font-family: Arial, sans-serif;
+     background-color: #f4f4f4;
+     border-radius: 8px;
+     max-width: 800px;
+     margin: 0 auto;
+     overflow-y: auto;
+ }
+ 
+ /* Section Title */
+ h1 {
+     text-align: center;
+     color: #333;
+ }
+ 
+ p {
+     text-align: center;
+     color: #555;
+     margin-bottom: 20px;
+ }
+ 
+ /* Favorites Section */
+ .favorites-section {
+     margin-bottom: 30px;
+ }
+ 
+ .favorites-section h2 {
+     font-size: 1.5rem;
+     color: #333;
+     text-align: left;
+ }
+ 
+ .separator {
+     height: 1px;
+     background-color: #ddd;
+     margin-top: 10px;
+     margin-bottom: 20px;
+ }
+ 
+ /* Scrollable Skills List */
+ .skills-list {
+     max-height: 400px;
+     overflow-y: scroll;
+ }
+ 
+ /* Skill Item */
+ .skill-item {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     padding: 15px;
+     background-color: #fff;
+     border-radius: 8px;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+     margin-bottom: 15px;
+ }
+ 
+ .skill-header {
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+     margin-bottom: 10px;
+ }
+ 
+ .skill-name {
+     font-size: 1.2rem;
+     color: #333;
+     font-weight: bold;
+ }
+ 
+ .skill-actions {
+     display: flex;
+     gap: 10px;
+ }
+ 
+ .action-button {
+     padding: 5px 10px;
+     font-size: 0.9rem;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ 
+ .action-button.favorite {
+     background-color: #ffd700;
+     color: #333;
+ }
+ 
+ .action-button.marked {
+     background-color: #4caf50;
+     color: #fff;
+ }
+ 
+ .action-button:hover {
+     background-color: #f0f0f0;
+ }
+ 
+ /* Skill Description */
+ .skill-description {
+     font-size: 0.9rem;
+     color: #555;
+     margin-bottom: 10px;
+ }
+ 
+ /* Learn More Button */
+ .learn-more-button {
+     padding: 8px 16px;
+     font-size: 1rem;
+     color: #fff;
+     background-color: #007bff;
+     border-radius: 4px;
+     text-decoration: none;
+     text-align: center;
+ }
+ 
+ .learn-more-button:hover {
+     background-color: #0056b3;
+ }
+ 
