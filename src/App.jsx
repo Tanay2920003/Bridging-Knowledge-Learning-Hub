@@ -36,6 +36,12 @@ function App() {
             <Route path="/landing" element={<LandingPage />} />
           </Routes>
         </div>
+        <div className="bottom-navbar">
+        <a href="#home" className="nav-link">Home</a>
+        <a href="#services" className="nav-link">Services</a>
+        <a href="#contact" className="nav-link">Contact</a>
+        <a href="#about" className="nav-link">About</a>
+      </div>
       </div>
   );
 }

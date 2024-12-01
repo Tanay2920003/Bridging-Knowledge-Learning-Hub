@@ -189,3 +189,46 @@ button:hover {
   margin-top: 20px;
   z-index: 2; /* Ensure it's above the background */
 }
+/* Fixed bottom navbar styled as a pill */
+.bottom-navbar {
+  position: fixed;
+  bottom: 20px;  /* Add some space from the bottom edge */
+  left: 50%;
+  transform: translateX(-50%); /* Center the navbar */
+  width: auto; /* Adjust width according to content */
+  background-color: #333;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 20px;
+  border-radius: 30px; /* Pill shape */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's on top of content */
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 15px;
+  border-radius: 20px; /* Rounded link buttons */
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #555;
+  border-radius: 20px;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  .bottom-navbar {
+    width: 90%;  /* Make navbar take 90% of the screen width */
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-around;
+  }
+
+  .nav-link {
+    font-size: 14px; /* Slightly smaller text on mobile */
+  }
+}
