@@ -23,7 +23,6 @@
     display: none; /* Hide scrollbar in Webkit browsers (Chrome, Safari, etc.) */
 }
 
-
 .tasks-container::-webkit-scrollbar-thumb {
     background-color: #ccc; /* Custom scrollbar thumb */
     border-radius: 3px;
@@ -92,18 +91,29 @@ p {
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
     gap: 10px;
     margin-bottom: 20px;
-    justify-content: center; /* Center align */
+    justify-content: flex-start; /* Align items to the start */
 }
 
-.task-input, .date-input {
+/* Task and Date inputs */
+.task-input {
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: 100%; /* Full width for smaller screens */
-    max-width: 300px; /* Limit width on larger screens */
+    width: 57%; /* Full width for smaller screens */
+    max-width: 400px; /* Limit the width of task input */
 }
 
+.date-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 50%; /* Full width for date input */
+    max-width: 200px; /* Limit the width of date input */
+}
+
+/* Add task button */
 .add-task-button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -113,11 +123,15 @@ p {
     border-radius: 4px;
     cursor: pointer;
     white-space: nowrap; /* Prevent button text from wrapping */
+    width: 100%; /* Full width */
+    max-width: 700px; /* Same width as the inputs */
 }
 
+/* Button hover effect */
 .add-task-button:hover {
     background-color: #45a049;
 }
+
 .add-task-button2 {
     padding: 10px 20px;
     font-size: 1rem;
@@ -128,7 +142,8 @@ p {
     cursor: pointer;
     white-space: nowrap; /* Prevent button text from wrapping */
 }
-.add-task-button:hover {
+
+.add-task-button2:hover {
     background-color: #ffffff00;
 }
 
@@ -179,12 +194,16 @@ ul {
 /* Responsive design */
 @media screen and (max-width: 600px) {
     .add-task-container {
-        flex-direction: column;
+        flex-direction: row; /* Stack inputs and button vertically */
         align-items: stretch;
     }
 
     .task-input, .date-input {
         max-width: 100%; /* Use full width on small screens */
+    }
+
+    .add-task-button {
+        max-width: 100%; /* Use full width for button on small screens */
     }
 
     .task-item {
