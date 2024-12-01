@@ -14,7 +14,7 @@
      align-items: center;
      border-radius: 25px;
    }
-   
+
    /* Carousel box */
    .carousel-box {
      background-color: #fff;
@@ -26,14 +26,14 @@
      text-align: center;
      position: relative;
    }
-   
+
    /* Title inside the carousel box */
    .carousel-box h1 {
      font-size: 2.5rem;
      color: #000000;
      margin-bottom: 30px;
    }
-   
+
    /* Carousel container styling */
    .carousel-container {
      position: relative;
@@ -42,7 +42,7 @@
      margin: 0 auto;
      perspective: 1200px; /* Adding perspective to create depth for the 3D effect */
    }
-   
+
    /* 3D carousel styling */
    .carousel {
      position: absolute;
@@ -58,13 +58,14 @@
      align-items: center;
      transform-origin: center center;
    }
-   
+
    /* Each carousel card styling */
    .carousel-card {
      position: absolute;
      width: 220px; /* Fixed card width */
      height: 290px; /* Fixed card height */
-     background: #050101; /* Solid background */
+       background-image: url("https://imgs.search.brave.com/DO-7y82nTjQtIi-Aj3za2FOCIFJ073VhoEaZ6-UvddA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzkyMDEwMjYvci9p/bC84NTVkYmMvMTY3/MzkyMzIwMi9pbF8z/NDB4MjcwLjE2NzM5/MjMyMDJfOHlpcC5q/cGc");
+       background-size: cover;
      color: white;
      border-radius: 12px;
      box-shadow: 0 6px 15px rgb(255, 255, 255);
@@ -77,13 +78,15 @@
      cursor: pointer;
      user-select: none; /* Prevent text selection */
    }
-   
+
    /* Hover effect for cards */
-   .carousel-card:hover {
-     background: #ff0000;
-     transform: translateY(-10px) rotateY(10deg);
-   }
-   
+.carousel-card:hover {
+    background: rgba(255,255,255,1); /* Transparent black layer */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition */
+    border: 2px black solid;
+}
+
    /* Title inside each card */
    .carousel-card h3 {
      font-size: 1.5rem;
@@ -91,14 +94,14 @@
      margin: 0;
      font-weight: 600;
    }
-   
+
    /* Description inside each card */
    .carousel-card p {
      font-size: 1rem;
      color: hsl(60, 100%, 51%);
      margin: 10px 0;
    }
-   
+
    /* Learn More link styling */
    .carousel-card .learn-more {
      font-size: 1rem;
@@ -106,11 +109,11 @@
      text-decoration: none;
      margin-top: 10px;
    }
-   
+
    .carousel-card .learn-more:hover {
      text-decoration: underline;
    }
-   
+
    /* Navigation buttons styling */
    .carousel-navigation {
      position: absolute;
@@ -120,7 +123,7 @@
      display: flex;
      gap: 20px;
    }
-   
+
    .carousel-navigation button {
      background-color: #007bff;
      color: white;
@@ -131,57 +134,65 @@
      border-radius: 5px;
      transition: background-color 0.3s;
    }
-   
+
    .carousel-navigation button:hover {
      background-color: #0056b3;
    }
-   
+
    .carousel-navigation button:focus {
      outline: none;
    }
-   
+
    /* Responsive design */
    @media (max-width: 768px) {
      .carousel-container {
        height: 350px;
        width: 80%;
      }
-   
+
      .carousel-card {
        width: 180px;
        height: 270px;
      }
-   
+
      .carousel-card h3 {
        font-size: 1.2rem;
      }
-   
+
      .carousel-card p {
        font-size: 0.9rem;
      }
    }
-   
+
    @media (max-width: 480px) {
      .carousel-container {
        height: 300px;
        width: 90%;
      }
-   
+
      .carousel-card {
        width: 150px;
        height: 250px;
      }
-   
+
      .carousel-card h3 {
        font-size: 1rem;
      }
-   
+
      .carousel-card p {
        font-size: 0.85rem;
      }
-   
+
      h1 {
        font-size: 1.5rem;
      }
    }
-   
+h4{
+    color: black;
+    font-weight: bolder;
+}
+h5{
+    color: rgb(2, 0, 0);
+
+}
+
