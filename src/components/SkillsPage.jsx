@@ -103,7 +103,7 @@ const SkillsPage = () => {
                                     }`}
                                     onClick={() => toggleMark(skill.id)}
                                 >
-                                    {marked.includes(skill.id) ? '✔ Marked' : 'Mark'}
+                                    {marked.includes(skill.id) ? '✔ Completed' : 'Mark as Complete'}
                                 </button>
                             </div>
                         </div>
