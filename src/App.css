@@ -224,11 +224,13 @@ button:hover {
   .bottom-navbar {
     width: 90%;  /* Make navbar take 90% of the screen width */
     flex-direction: row;
-    padding: 10px;
-    justify-content: space-around;
+    padding: 8px;  /* Reduce padding for mobile */
+    justify-content: space-between; /* Adjust space between links */
+    bottom: 10px;  /* Reduce space from the bottom */
   }
 
   .nav-link {
-    font-size: 14px; /* Slightly smaller text on mobile */
+    font-size: 14px;  /* Slightly smaller text on mobile */
+    padding: 5px 10px;  /* Adjust padding to fit better */
   }
 }
