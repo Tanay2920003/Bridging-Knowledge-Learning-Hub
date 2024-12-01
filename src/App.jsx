@@ -9,6 +9,7 @@ import EventPage from "./components/EventPage";
 import PreviousPapersPage from "./components/PreviousPapersPage";
 import TasksPage from "./components/TasksPage";
 import "./App.css";
+import AppBar from './AppBar';  // Import the AppBar component
 
 function App() {
     const vantaRef = useRef(null);
@@ -69,6 +70,8 @@ function App() {
                     )}
                 </>
             )}
+            <AppBar />
+
 
             {/* Bottom Navbar */}
             {location.pathname !== "/" && location.pathname !== "/register" && (
