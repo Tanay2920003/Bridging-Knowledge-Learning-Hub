@@ -8,9 +8,9 @@ import LearnPage from "./components/LearnPage";
 import EventPage from "./components/EventPage";
 import PreviousPapersPage from "./components/PreviousPapersPage";
 import TasksPage from "./components/TasksPage";
-import ProfilePage from "./components/ProfilePage"; // Ensure this file exists in the 'components' directory
+import ProfilePage from "./components/ProfilePage";
 import "./App.css";
-import AppBar from './AppBar';  // Import the AppBar component
+import AppBar from './AppBar';
 
 function App() {
     const vantaRef = useRef(null);
@@ -41,6 +41,17 @@ function App() {
         navigate("/"); // Navigate back to the login page
     };
 
+    // Automatically hide the dropdown menu after 3 seconds
+    useEffect(() => {
+        if (showMenu) {
+            const timeout = setTimeout(() => {
+                setShowMenu(false);
+            }, 3000);
+
+            return () => clearTimeout(timeout); // Cleanup timeout on component unmount or showMenu change
+        }
+    }, [showMenu]);
+
     return (
         <div ref={vantaRef} className="vanta-bg">
             <div className="content-container">
@@ -48,7 +59,7 @@ function App() {
                     <Route path="/" element={<LoginPage />} />
                     <Route path="/register" element={<RegisterPage />} />
                     <Route path="/landing" element={<LandingPage />} />
-                    <Route path="/profile" element={<ProfilePage />} /> {/* Profile Page Route */}
+                    <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/skills" element={<SkillsPage />} />
                     <Route path="/learn" element={<LearnPage />} />
                     <Route path="/event" element={<EventPage />} />
@@ -61,24 +72,21 @@ function App() {
             {location.pathname !== "/" && location.pathname !== "/register" && (
                 <>
                     <div className="profile-circle" onClick={() => setShowMenu(!showMenu)}>
-                        <span className="profile-initial">S</span> {/* Example initial */}
+                        <span className="profile-initial">S</span>
                     </div>
 
                     {/* Dropdown Menu */}
                     {showMenu && (
                         <div className="dropdown-menu">
                             <button onClick={() => navigate('/profile')} className="navigate-button">
-            Profile
-        </button>
-                            
+                                Profile
+                            </button>
                             <button onClick={handleLogout}>Logout</button>
-
                         </div>
                     )}
                 </>
             )}
             <AppBar />
-
 
             {/* Bottom Navbar */}
             {location.pathname !== "/" && location.pathname !== "/register" && (
