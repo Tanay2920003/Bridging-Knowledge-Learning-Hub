@@ -56,6 +56,7 @@ const LearnPage = () => {
           url: 'https://www.netacad.com/courses/introduction-iot?courseLang=en-US',
           image: 'https://images-ext-1.discordapp.net/external/NS5uZ-sQHajA5ayCztCOMgs0wcxbAe_wqyFrwDGNXZk/%3Fut%3D1619654083258/https/www.netacad.com/p/ff9e491c-49be-4734-803e-a79e6e83dab1/26173437-6058-48a2-b0fb-aa312eda0570/image.png?format=webp&quality=lossless&width=806&height=555', // Placeholder image for Subject 3
         },
+        
       ],
     },
   ];
@@ -96,6 +97,11 @@ const LearnPage = () => {
               </div>
           ))}
         </div>
+        <div><ul>
+        ‎ 
+          ‎ </ul>
+          <ul>
+          ‎ </ul></div>
       </div>
   );
 };
