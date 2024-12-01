@@ -35,6 +35,11 @@ const LandingPage = () => {
                             Access previous year's exam papers and get a better understanding of the exam patterns. These resources will help you prepare effectively and efficiently.
                         </p>
                     </div>
+                    <div className="insight-box">
+                        <h3 className="insight-subheading">Events</h3>
+                        <p className="insight-text">
+                        Step into a vibrant canvas of events, where innovation meets inspiration. Discover, connect, and create memories that define our journey!                        </p>
+                    </div>
 
                     <div className="insight-box">
                         <h3 className="insight-subheading">Study Tasks</h3>
