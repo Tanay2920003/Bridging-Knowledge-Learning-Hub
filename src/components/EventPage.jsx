@@ -61,7 +61,7 @@ const EventPage = () => {
         </div>
         <div className="carousel-navigation">
           <button className="prev-button" onClick={prevCard}>Previous</button>
-          <button className="next-button" onClick={nextCard}>ㅤNextㅤ</button>
+          <button className="next-button" onClick={nextCard}>Next</button>
         </div>
       </div>
     </div>
