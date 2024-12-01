@@ -193,22 +193,23 @@ button:hover {
 .bottom-navbar {
   position: fixed;
   bottom: 20px;  /* Add some space from the bottom edge */
+  height: 50px;
   left: 50%;
   transform: translateX(-50%); /* Center the navbar */
   width: auto; /* Adjust width according to content */
-  background-color: #333;
+  background-color: #ffffff;
   display: flex;
   justify-content: space-around;
   padding: 10px 20px;
   border-radius: 30px; /* Pill shape */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 90px 300px rgba(191, 13, 60, 01);
   z-index: 1000; /* Ensure it's on top of content */
   max-width: 100%; /* Prevent navbar from exceeding screen width */
   box-sizing: border-box; /* Make sure padding doesn’t affect the width */
 }
 
 .nav-link {
-  color: white;
+  color: rgba(4, 7, 7, 0.984);
   text-decoration: none;
   font-size: 16px;
   padding: 5px 15px;
@@ -217,8 +218,9 @@ button:hover {
 }
 
 .nav-link:hover {
-  background-color: #0c41ed;
+  background-color: #060605;
   border-radius: 20px;
+  color:white;
 }
 
 /* Responsive design for small screens */
