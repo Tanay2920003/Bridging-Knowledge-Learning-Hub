@@ -36,7 +36,7 @@ const SkillsPage = () => {
     return (
         <div className="skills-page">
             <h1>Skills</h1>
-            <p>Here are the skills we offer:</p>
+            <p>Develop Skills and Make Projects</p>
 
             {/* Favorites Section */}
             {favoriteSkills.length > 0 && (
