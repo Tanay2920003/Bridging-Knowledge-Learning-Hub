@@ -203,13 +203,14 @@ button:hover {
   border-radius: 30px; /* Pill shape */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* Ensure it's on top of content */
+  max-width: 100%; /* Prevent navbar from exceeding screen width */
+  box-sizing: border-box; /* Make sure padding doesn’t affect the width */
 }
 
 .nav-link {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  
   padding: 5px 15px;
   border-radius: 20px; /* Rounded link buttons */
   transition: background-color 0.3s;
@@ -225,14 +226,46 @@ button:hover {
   .bottom-navbar {
     width: 90%;  /* Make navbar take 90% of the screen width */
     flex-direction: row;
-    padding: 8px;  /* Reduce padding for mobile */
+    padding: 8px 10px;  /* Reduce padding for mobile */
     justify-content: space-between; /* Adjust space between links */
     bottom: 10px;  /* Reduce space from the bottom */
+    border-radius: 20px; /* Adjust border radius for smaller screens */
   }
 
   .nav-link {
     font-size: 14px;  /* Slightly smaller text on mobile */
-    padding: 5px 10px;  /* Adjust padding to fit better */
-    padding-top: 20px;
+    padding: 5px 8px;  /* Adjust padding to fit better */
   }
 }
+
+/* Further adjustments for extra small screens */
+@media (max-width: 400px) {
+  .bottom-navbar {
+    width: 85%;  /* Reduce width for very small screens */
+    flex-direction: row;
+    padding: 6px 8px;  /* Reduce padding further */
+    bottom: 10px;  /* Ensure it's still positioned properly */
+    border-radius: 15px; /* Adjust border radius for very small screens */
+  }
+
+  .nav-link {
+    font-size: 12px;  /* Reduce font size for very small screens */
+    padding: 5px 6px;  /* Adjust padding to fit */
+  }
+}
+
+/* Prevent content overflow, ensure body uses full viewport height */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Ensure main content container fits within the screen */
+.content-container {
+  min-height: 100%; /* Make sure it fills the screen */
+  box-sizing: border-box; /* Include padding in height calculation */
+  padding-bottom: 60px; /* Make space for the bottom navbar */
+}
+
