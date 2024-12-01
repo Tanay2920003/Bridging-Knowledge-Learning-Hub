@@ -81,7 +81,7 @@ body, html {
 
 /* Subheading for additional details */
 .sub-heading {
-    font-size: 1.5rem;
+    font-size: 25px;
     color: #333;
     margin-bottom: 25px;
     font-weight: 600;
@@ -140,14 +140,14 @@ body, html {
 
 /* Insight Text */
 .insight-text {
-    font-size: 1rem;
+    font-size: 20px;
     color: #000000;
     line-height: 1.6;
 }
 
 /* Insight Subheading */
 .insight-subheading {
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #000;
     margin-bottom: 10px;
     font-weight: bold;
