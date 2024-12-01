@@ -19,13 +19,13 @@
   }
   
   .register-title {
-    font-size: 24px;
+    font-size: 35px;
     color: #333;
     margin-bottom: 10px;
   }
   
   .register-subtitle {
-    font-size: 14px;
+    font-size: 20px;
     color: #666;
     margin-bottom: 20px;
   }
@@ -63,7 +63,7 @@
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
@@ -75,7 +75,7 @@
   
   .login-link {
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 15px;
     color: black;
   }
   
