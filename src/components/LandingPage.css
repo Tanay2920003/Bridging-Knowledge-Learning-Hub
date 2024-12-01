@@ -1,0 +1,142 @@
+/* General Layout for the Landing Page */
+.landing-page {
+    min-height: 100vh;  /* Ensure the page fills the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Align items to the top */
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;  /* Allow vertical scrolling */
+}
+
+/* Main content container */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;  /* Allow the content to grow */
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;  /* Enable scrolling if the content is large */
+}
+
+/* Form container (white box) */
+.form-container {
+    text-align: center;
+    max-width: 800px;
+    background-color: #fff;  /* White background for the form container */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;  /* Adjust width to fill container */
+    box-sizing: border-box;
+    margin-bottom: 30px;  /* Provide some space between sections */
+}
+
+/* Main welcome text */
+.welcome-text {
+    font-size: 3rem;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Subheading for additional details */
+.sub-heading {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Service information (description) */
+.service-info {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Explore Now button */
+.explore-button {
+    padding: 15px 30px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.explore-button:hover {
+    background-color: #333;
+}
+
+/* Additional Insights Section */
+.additional-insights {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 800px;
+    width: 100%;
+}
+
+.insight-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Box for each insight */
+.insight-box {
+    background-color: #fff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.insight-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.insight-subheading {
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 25px;
+    }
+
+    .welcome-text {
+        font-size: 2.5rem;
+    }
+
+    .sub-heading {
+        font-size: 1.2rem;
+    }
+
+    .service-info {
+        font-size: 0.9rem;
+    }
+
+    .explore-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    .insight-box {
+        padding: 15px;
+    }
+}
