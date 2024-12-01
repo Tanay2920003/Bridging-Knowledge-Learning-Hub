@@ -119,3 +119,78 @@
      background-color: #0056b3;
  }
  
+ /* Mobile Responsive Styles */
+ @media (max-width: 768px) {
+     .skills-page {
+         padding: 15px;
+     }
+ 
+     h1 {
+         font-size: 1.5rem;
+     }
+ 
+     p {
+         font-size: 1rem;
+     }
+ 
+     .favorites-section h2 {
+         font-size: 1.3rem;
+     }
+ 
+     .skills-list {
+         max-height: 300px;
+         overflow-y: scroll;
+     }
+ 
+     .skill-item {
+         padding: 12px;
+         margin-bottom: 12px;
+     }
+ 
+     .skill-name {
+         font-size: 1rem;
+     }
+ 
+     .action-button {
+         padding: 4px 8px;
+         font-size: 0.8rem;
+     }
+ 
+     .skill-description {
+         font-size: 0.85rem;
+     }
+ 
+     .learn-more-button {
+         padding: 6px 12px;
+         font-size: 0.9rem;
+     }
+ }
+ 
+ @media (max-width: 480px) {
+     .skill-item {
+         padding: 10px;
+     }
+ 
+     .skill-name {
+         font-size: 0.9rem;
+     }
+ 
+     .action-button {
+         padding: 3px 6px;
+         font-size: 0.75rem;
+     }
+ 
+     .learn-more-button {
+         padding: 5px 10px;
+         font-size: 0.8rem;
+     }
+ 
+     .separator {
+         margin: 15px 0;
+     }
+ 
+     .skills-list {
+         max-height: 250px;
+     }
+ }
+ 
