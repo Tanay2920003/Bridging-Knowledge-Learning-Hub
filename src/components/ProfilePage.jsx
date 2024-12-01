@@ -52,27 +52,26 @@ const ProfilePage = () => {
     <div className="profile-page">
       <h1 className="profile-title">Your Profile</h1>
       <div className="profile-container">
-        <div className="profile-pic-container">
-          <label htmlFor="profile-pic" className="profile-pic-label">
-            Profile Picture:
-          </label>
-          <input
-            type="file"
-            id="profile-pic"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="file-input"
-          />
-          {imagePreview ? (
-            <img
-              src={imagePreview}
-              alt="Profile Preview"
-              className="profile-pic-preview"
-            />
-          ) : (
-            <div className="default-profile-pic">No Image</div>
-          )}
-        </div>
+      <div className="profile-pic-container">
+  <label htmlFor="profile-pic" className="profile-pic-label">
+    {imagePreview ? (
+      <img
+        src={imagePreview}
+        alt="Profile Preview"
+        className="profile-pic-preview"
+      />
+    ) : (
+      <div className="default-profile-pic">Add image</div>
+    )}
+  </label>
+  <input
+    type="file"
+    id="profile-pic"
+    accept="image/*"
+    onChange={handleImageChange}
+    className="file-input"
+  />
+</div>
         <div className="form-container">
           <div className="form-group">
             <label>Name:</label>

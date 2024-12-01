@@ -67,8 +67,11 @@ function App() {
                     {/* Dropdown Menu */}
                     {showMenu && (
                         <div className="dropdown-menu">
+                            <button onClick={() => navigate('/profile')} className="navigate-button">
+            Profile
+        </button>
+                            
                             <button onClick={handleLogout}>Logout</button>
-                            <a href="/profile">Profile</a> {/* Navigate to profile page */}
 
                         </div>
                     )}
