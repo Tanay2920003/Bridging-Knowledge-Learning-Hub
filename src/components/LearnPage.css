@@ -1,0 +1,33 @@
+.learn-page {
+     text-align: center;
+   }
+   
+   .tab-container {
+     display: flex;
+     flex-direction: column;
+   }
+   
+   .tab-list {
+     list-style: none;
+     padding: 0;
+   }
+   
+   .tab-item {
+     padding: 10px;
+     cursor: pointer;
+   }
+   
+   .tab-item.active {
+     background-color: #f0f0f0;
+   }
+   
+   .tab-content {
+     flex: 1;
+     padding: 20px;
+   }
+   
+   .tab-panel {
+     padding: 20px;
+     border: 1px solid #ddd;
+     border-top: none;
+   }
