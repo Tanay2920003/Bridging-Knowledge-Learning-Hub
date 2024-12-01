@@ -1,53 +1,187 @@
 /* Overall page styling */
 .event-page {
-  text-align: center;
-  margin: 50px;
-  perspective: 1000px; /* Enables 3D perspective */
-  cursor: grab; /* Indicate draggable area */
-}
-
-.event-page:active {
-  cursor: grabbing; /* Show grabbing cursor during drag */
-}
-
-/* Carousel container */
-.card-container {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  margin: auto;
-  transform-style: preserve-3d; /* Enables child elements to rotate in 3D space */
-  transition: transform 0.1s ease-out; /* Smooth movement while dragging */
-}
-
-/* Individual card styling */
-.event-card {
-  position: absolute;
-  width: 200px;
-  height: 300px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform-origin: center center; /* Rotate around the center */
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.event-card h3 {
-  font-size: 20px;
-  margin: 0;
-}
-
-.event-card p {
-  font-size: 16px;
-  margin: 10px 0 0;
-}
-
-/* Highlight hovered card */
-.event-card:hover {
-  background: #e0f7fa;
-  opacity: 1;
-}
+     font-family: 'Arial', sans-serif;
+     background-color: #05030300;
+     padding: 100px 0;
+     text-align: center;
+     margin: 0;
+     max-width: 900%;
+     position: relative;
+     height: 200vh; /* Adjusted to make the box fit the screen */
+     display: flex;
+     width: 200vh;
+     justify-content: center;
+     align-items: center;
+     border-radius: 25px;
+   }
+   
+   /* Carousel box */
+   .carousel-box {
+     background-color: #fff;
+     padding: 30px;
+     border-radius: 12px;
+     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+     width: 100%; /* Set width of the carousel box */
+     max-width: 1200px; /* Set maximum width */
+     text-align: center;
+     position: relative;
+   }
+   
+   /* Title inside the carousel box */
+   .carousel-box h1 {
+     font-size: 2.5rem;
+     color: #000000;
+     margin-bottom: 30px;
+   }
+   
+   /* Carousel container styling */
+   .carousel-container {
+     position: relative;
+     width: 100%;
+     height: 400px; /* Fixed height for carousel */
+     margin: 0 auto;
+     perspective: 1200px; /* Adding perspective to create depth for the 3D effect */
+   }
+   
+   /* 3D carousel styling */
+   .carousel {
+     position: absolute;
+     top: 0%;
+     left: 0%;
+     width: 100%;
+     height: 100%;
+     transform-style: preserve-3d;
+     transform: rotateY(0deg);
+     transition: transform 0.5s ease-in-out;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transform-origin: center center;
+   }
+   
+   /* Each carousel card styling */
+   .carousel-card {
+     position: absolute;
+     width: 220px; /* Fixed card width */
+     height: 290px; /* Fixed card height */
+     background: #050101; /* Solid background */
+     color: white;
+     border-radius: 12px;
+     box-shadow: 0 6px 15px rgb(255, 255, 255);
+     padding: 20px;
+     box-sizing: border-box;
+     text-align: center;
+     transition: transform 0.5s ease-in-out;
+     opacity: 1; /* Make sure the card is always solid */
+     transform: rotateY(0deg) translateZ(300px);
+     cursor: pointer;
+     user-select: none; /* Prevent text selection */
+   }
+   
+   /* Hover effect for cards */
+   .carousel-card:hover {
+     background: #ff0000;
+     transform: translateY(-10px) rotateY(10deg);
+   }
+   
+   /* Title inside each card */
+   .carousel-card h3 {
+     font-size: 1.5rem;
+     color: #fdfdfd;
+     margin: 0;
+     font-weight: 600;
+   }
+   
+   /* Description inside each card */
+   .carousel-card p {
+     font-size: 1rem;
+     color: hsl(60, 100%, 51%);
+     margin: 10px 0;
+   }
+   
+   /* Learn More link styling */
+   .carousel-card .learn-more {
+     font-size: 1rem;
+     color: #007bff;
+     text-decoration: none;
+     margin-top: 10px;
+   }
+   
+   .carousel-card .learn-more:hover {
+     text-decoration: underline;
+   }
+   
+   /* Navigation buttons styling */
+   .carousel-navigation {
+     position: absolute;
+     bottom: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+     gap: 20px;
+   }
+   
+   .carousel-navigation button {
+     background-color: #007bff;
+     color: white;
+     border: none;
+     padding: 10px 20px;
+     font-size: 1rem;
+     cursor: pointer;
+     border-radius: 5px;
+     transition: background-color 0.3s;
+   }
+   
+   .carousel-navigation button:hover {
+     background-color: #0056b3;
+   }
+   
+   .carousel-navigation button:focus {
+     outline: none;
+   }
+   
+   /* Responsive design */
+   @media (max-width: 768px) {
+     .carousel-container {
+       height: 350px;
+       width: 80%;
+     }
+   
+     .carousel-card {
+       width: 180px;
+       height: 270px;
+     }
+   
+     .carousel-card h3 {
+       font-size: 1.2rem;
+     }
+   
+     .carousel-card p {
+       font-size: 0.9rem;
+     }
+   }
+   
+   @media (max-width: 480px) {
+     .carousel-container {
+       height: 300px;
+       width: 90%;
+     }
+   
+     .carousel-card {
+       width: 150px;
+       height: 250px;
+     }
+   
+     .carousel-card h3 {
+       font-size: 1rem;
+     }
+   
+     .carousel-card p {
+       font-size: 0.85rem;
+     }
+   
+     h1 {
+       font-size: 1.5rem;
+     }
+   }
+   
