@@ -1,95 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import './EventPage.css';
-
-const THRESHOLD = 100;
+import React, { useState } from "react";
+import "./EventPage.css";
 
 const EventPage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [startX, setStartX] = useState(null);
-  const [deltaX, setDeltaX] = useState(0);
+  const [currentAngle, setCurrentAngle] = useState(0); // Current rotation angle
+  const [isDragging, setIsDragging] = useState(false); // Drag state
+  const [startX, setStartX] = useState(0); // Starting X-coordinate of drag
 
   const events = [
     { id: 1, title: "Event 1", description: "Details about Event 1" },
     { id: 2, title: "Event 2", description: "Details about Event 2" },
     { id: 3, title: "Event 3", description: "Details about Event 3" },
     { id: 4, title: "Event 4", description: "Details about Event 4" },
+    { id: 5, title: "Event 5", description: "Details about Event 5" },
+    { id: 6, title: "Event 6", description: "Details about Event 6" },
   ];
 
-  const handleTouchStart = (event) => {
-    setStartX(event.touches[0].clientX);
+  // Handle when the mouse drag starts
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.clientX); // Record starting X position
   };
 
-  const handleTouchMove = (event) => {
-    const newDeltaX = event.touches[0].clientX - startX;
-    setDeltaX(newDeltaX);
+  // Handle mouse movement
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+
+    const deltaX = e.clientX - startX; // Calculate horizontal drag distance
+    const newAngle = currentAngle + deltaX * 0.3; // Adjust sensitivity with multiplier
+    setCurrentAngle(newAngle);
+    setStartX(e.clientX); // Update startX for smooth rotation
   };
 
-  const handleTouchEnd = () => {
-    if (deltaX > THRESHOLD) { // Swiped left - next card
-      handleNextCard();
-    } else if (deltaX < -THRESHOLD) { // Swiped right - potential action (optional)
-      // Implement logic for right swipe (e.g., like button)
-    }
-    setStartX(null);
-    setDeltaX(0);
-  };
-
-  useEffect(() => {
-    if (deltaX === 0) return; // No swipe, do nothing
-
-    const resetCard = () => {
-      setDeltaX(0);
-    };
-
-    const timeoutId = setTimeout(resetCard, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [deltaX]);
-
-  const handleNextCard = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
-  };
-
-  const handlePrevCard = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + events.length) % events.length);
+  // Handle when the mouse drag ends
+  const handleMouseUp = () => {
+    setIsDragging(false);
   };
 
   return (
-    <div className="event-page">
-      <h1>Event</h1>
-      <p>Here are the upcoming events.</p>
-
-      <div className="card-container">
-        {events.map((event, index) => {
-          const zIndex = index === currentIndex ? 10 : index > currentIndex ? 5 : 1;
-          const scale = index === currentIndex ? 1 : 0.9;
-          const position = index === currentIndex ? 'center' : 'left';
-
-          const cardStyle = {
-            zIndex,
-            transform: `scale(${scale}) translateX(${position === 'left' ? 50 : deltaX}%)`,
-            transition: 'transform 1s ease, z-index 1s ease',
-          };
-
-          return (
-            <div
-              key={event.id}
-              className="event-card"
-              style={cardStyle}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="card-navigation">
-        <button onClick={handlePrevCard}>Previous</button>
-        <button onClick={handleNextCard}>Next</button>
+    <div
+      className="event-page"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp} // Stop dragging if mouse leaves container
+    >
+      <h1>3D Revolving Carousel</h1>
+      <div
+        className="card-container"
+        style={{
+          transform: `rotateY(${currentAngle}deg)`,
+        }}
+      >
+        {events.map((event, index) => (
+          <div
+            key={event.id}
+            className="event-card"
+            style={{
+              transform: `rotateY(${index * (360 / events.length)}deg) translateZ(300px)`,
+            }}
+          >
+            <h3>{event.title}</h3>
+            <p>{event.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

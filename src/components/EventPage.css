@@ -1,58 +1,53 @@
+/* Overall page styling */
 .event-page {
-     text-align: center;
-     padding: 20px;
-     color: white;
-     background-color:white;
-   }
-   
-   .card-container {
-     position: relative;
-     width: 300px;
-     height: 400px;
-     margin: 50px auto;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-   }
-   
-   .event-card {
-     position: absolute;
-     width: 100%;
-     height: 100%;
-     background-color: #2f46c9;
-     border-radius: 10px;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-     padding: 20px;
-     transition: transform 0.3s ease, z-index 0.3s ease;
-   }
-   
-   .event-card h3 {
-     margin-bottom: 10px;
-     font-size: 1.5rem;
-     color: #17c9fa;
-   }
-   
-   .event-card p {
-     font-size: 1rem;
-     color: #ffffff;
-   }
-   
-   .card-navigation {
-     margin-top: 20px;
-   }
-   
-   .card-navigation button {
-     padding: 10px 20px;
-     background-color: #333;
-     color: white;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     font-size: 1rem;
-     margin: 0 10px;
-   }
-   
-   .card-navigation button:hover {
-     background-color: #555;
-   }
-   
+  text-align: center;
+  margin: 50px;
+  perspective: 1000px; /* Enables 3D perspective */
+  cursor: grab; /* Indicate draggable area */
+}
+
+.event-page:active {
+  cursor: grabbing; /* Show grabbing cursor during drag */
+}
+
+/* Carousel container */
+.card-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  transform-style: preserve-3d; /* Enables child elements to rotate in 3D space */
+  transition: transform 0.1s ease-out; /* Smooth movement while dragging */
+}
+
+/* Individual card styling */
+.event-card {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center center; /* Rotate around the center */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.event-card h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.event-card p {
+  font-size: 16px;
+  margin: 10px 0 0;
+}
+
+/* Highlight hovered card */
+.event-card:hover {
+  background: #e0f7fa;
+  opacity: 1;
+}
