@@ -1,0 +1,258 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #5046dd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Profile Page */
+  .profile-page {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  /* Profile Container */
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Profile Picture Section */
+  .profile-pic-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .profile-pic-label {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .profile-pic-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+  }
+  
+  .default-profile-pic {
+    width: 150px;
+    height: 150px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
+  /* Form Container */
+  .form-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    color: #000000;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-field,
+  .textarea-field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #1694e9;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .textarea-field {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  /* Buttons */
+  .save-button, .logout-button {
+    font-size: 14px; /* Smaller text size */
+    padding: 8px 16px; /* Adjust padding for smaller buttons */
+    margin-top: 10px; /* Space between buttons */
+    cursor: pointer;
+  }
+  .save-button {
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .save-button:hover, .logout-button:hover {
+    background-color: #ddd;
+  }
+  
+  .logout-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-page {
+      padding: 20px;
+    }
+  
+    .profile-title {
+      font-size: 1.8rem;
+    }
+  
+    .form-container {
+      max-width: 100%;
+    }
+  
+    .profile-pic-container {
+      margin-bottom: 15px;
+    }
+  
+    .profile-pic-preview,
+    .default-profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .input-field,
+    .textarea-field {
+      font-size: 0.9rem;
+    }
+  
+    .save-button,
+    .logout-button {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  }
+  /* Style for the profile picture container */
+.profile-pic-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Profile picture preview */
+.profile-pic-preview {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Default message when no profile picture is set */
+.default-profile-pic {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Upload Profile Picture Button */
+.upload-pic-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-pic-button label {
+  cursor: pointer;
+}
+
+/* Save and Logout Buttons */
+.save-button {
+  font-size: 14px;
+  padding: 8px 10px;
+  margin-bottom: 10%;
+  margin-top: 10px;
+  cursor: pointer;
+  display: block;
+  width: 48%;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.save-button:hover, .logout-button:hover {
+  background-color: #0056b3;
+}
+
+  @media (max-width: 480px) {
+    .profile-page {
+      padding: 15px;
+    }
+  
+    .profile-title {
+      font-size: 1.6rem;
+    }
+  
+    .profile-pic-preview,
+    .default-profile-pic {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .input-field,
+    .textarea-field {
+      font-size: 0.8rem;
+    }
+  
+    .save-button,
+    .logout-button {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  

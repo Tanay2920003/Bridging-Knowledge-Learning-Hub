@@ -8,6 +8,7 @@ import LearnPage from "./components/LearnPage";
 import EventPage from "./components/EventPage";
 import PreviousPapersPage from "./components/PreviousPapersPage";
 import TasksPage from "./components/TasksPage";
+import ProfilePage from "./components/ProfilePage"; // Ensure this file exists in the 'components' directory
 import "./App.css";
 import AppBar from './AppBar';  // Import the AppBar component
 
@@ -47,6 +48,7 @@ function App() {
                     <Route path="/" element={<LoginPage />} />
                     <Route path="/register" element={<RegisterPage />} />
                     <Route path="/landing" element={<LandingPage />} />
+                    <Route path="/profile" element={<ProfilePage />} /> {/* Profile Page Route */}
                     <Route path="/skills" element={<SkillsPage />} />
                     <Route path="/learn" element={<LearnPage />} />
                     <Route path="/event" element={<EventPage />} />
@@ -66,6 +68,8 @@ function App() {
                     {showMenu && (
                         <div className="dropdown-menu">
                             <button onClick={handleLogout}>Logout</button>
+                            <a href="/profile">Profile</a> {/* Navigate to profile page */}
+
                         </div>
                     )}
                 </>
