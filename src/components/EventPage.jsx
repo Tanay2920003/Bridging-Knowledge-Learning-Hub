@@ -46,8 +46,8 @@ const EventPage = () => {
                 }}
               >
                 <div id="text-clor">
-                <h4>{event.title}</h4>
-                <h5>{event.description}</h5>
+                <h3>{event.title}</h3>
+                <p>{event.description}</p>
                 <a
                   href={event.link}
                   className="learn-more"
