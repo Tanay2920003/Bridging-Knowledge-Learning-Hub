@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './Task.css'
 const TasksPage = () => {
     const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50%;
+    min-height: 60%;
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
     padding: 20px;
@@ -13,6 +13,7 @@
 .tasks-container {
     width: 100%;
     max-width: 800px;
+    background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -43,6 +44,7 @@ h2 {
 }
 
 .event-item {
+    background-color: #f9f9f9;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
