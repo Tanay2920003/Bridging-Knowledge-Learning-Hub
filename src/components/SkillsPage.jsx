@@ -2,16 +2,10 @@ import React, { useState } from 'react';
 import './SkillsPage.css';
 
 const skillsList = [
-    { id: 1, name: "JavaScript", description: "A versatile programming language commonly used for web development.", link: "https://www.google.com" },
-    { id: 2, name: "Python", description: "A powerful, high-level language used for web development, data science, and more.", link: "https://www.google.com" },
-    { id: 3, name: "React", description: "A JavaScript library for building user interfaces.", link: "https://www.google.com" },
-    { id: 4, name: "Node.js", description: "A JavaScript runtime used for building scalable server-side applications.", link: "https://www.google.com" },
-    { id: 5, name: "Django", description: "A high-level Python web framework that encourages rapid development.", link: "https://www.google.com" },
-    { id: 6, name: "CSS", description: "A style sheet language used for describing the presentation of web pages.", link: "https://www.google.com" },
-    { id: 7, name: "HTML", description: "The standard markup language for creating web pages.", link: "https://www.google.com" },
-    { id: 8, name: "Machine Learning", description: "A subset of AI that allows systems to learn from data and improve performance over time.", link: "https://www.google.com" },
-    { id: 9, name: "Data Analysis", description: "The process of inspecting, cleaning, and modeling data to discover useful information.", link: "https://www.google.com" },
-    { id: 10, name: "Cloud Computing", description: "The delivery of computing services like servers, storage, and databases over the internet.", link: "https://www.google.com" },
+    { id: 1, name: "Learn AI Hands-On - PyTorch", description: "A versatile programming language commonly used for web development.", link: "https://cognitiveclass.ai/learn/learn-ai-hands-on-pytorch", image: "https://curator-production.s3.us.cloud-object-storage.appdomain.cloud/uploads/Data%20Augmentation.png" },
+    { id: 2, name: "Computer Vision Hands On With PyTorch", description: "A powerful, high-level language used for web development, data science, and more.", link: "https://cognitiveclass.ai/learn/computer-vision-hands-on-with-pytorch", image: "https://curator-production.s3.us.cloud-object-storage.appdomain.cloud/uploads/md5-636b6ab702415fecb67078a9790433a3-course_card.png" },
+    { id: 3, name: "SQL and Relational Databases 101", description: "A JavaScript library for building user interfaces.", link: "https://cognitiveclass.ai/courses/learn-sql-relational-databases", image: "https://curator-production.s3.us.cloud-object-storage.appdomain.cloud/uploads/md5-b2bb7c024cf1568c1a838db057f0cb3d-course_card.png" },{ id: 4, name: "Data Analysis with Python", description: "A JavaScript library for building user interfaces.", link: "https://cognitiveclass.ai/courses/data-analysis-python", image: "https://curator-production.s3.us.cloud-object-storage.appdomain.cloud/uploads/course-v1:IBMSkillsNetwork+DA0101EN+v1.png" },{ id: 5, name: "Docker Essentials: A Developer Introduction", description: "A JavaScript library for building user interfaces.", link: "https://cognitiveclass.ai/courses/chatbot-course", image: "https://curator-production.s3.us.cloud-object-storage.appdomain.cloud/uploads/course-v1:IBM+CO0101EN+v1.png" },{ id: 6, name: "Getting started with Linux Terminal Commands", description: "A JavaScript library for building user interfaces.", link: "https://cognitiveclass.ai/courses/getting-started-with-linux-terminal-commands", image: "https://curator-production.s3.us.cloud-object-storage.appdomain.cloud/uploads/md5-af8c0de006be81f95b27eb4c7f65d2f0-course_card.jpeg" },{ id: 7, name: "Monitor Water Levels and Soil Moisture with Geospatial APIs", description: "A JavaScript library for building user interfaces.", link: "https://cognitiveclass.ai/courses/monitor-water-levels-and-soil-moisture-with-geospatial-apis", image: "https://curator-production.s3.us.cloud-object-storage.appdomain.cloud/uploads/course-v1:IBMSkillsNetwork+GPXX0VPBEN+v1.png" },
+    // Add image URLs for other skills
 ];
 
 const SkillsPage = () => {
@@ -30,84 +24,33 @@ const SkillsPage = () => {
         );
     };
 
-    const favoriteSkills = skillsList.filter((skill) => favorites.includes(skill.id));
-    const nonFavoriteSkills = skillsList.filter((skill) => !favorites.includes(skill.id));
-
     return (
         <div className="skills-page">
             <h1>Skills</h1>
             <p>Develop Skills and Make Projects</p>
 
-            {/* Favorites Section */}
-            {favoriteSkills.length > 0 && (
-                <div className="favorites-section">
-                    <h2>Favorites</h2>
-                    <div className="separator"></div>
-                    <div className="skills-list">
-                        {favoriteSkills.map((skill) => (
-                            <div key={skill.id} className="skill-item">
-                                <div className="skill-header">
-                                    <span className="skill-name">{skill.name}</span>
-                                    <div className="skill-actions">
-                                        <button
-                                            className={`action-button ${
-                                                favorites.includes(skill.id) ? 'favorite' : ''
-                                            }`}
-                                            onClick={() => toggleFavorite(skill.id)}
-                                        >
-                                            {favorites.includes(skill.id) ? '★ Favorite' : '☆ Favorite'}
-                                        </button>
-                                        <button
-                                            className={`action-button ${
-                                                marked.includes(skill.id) ? 'marked' : ''
-                                            }`}
-                                            onClick={() => toggleMark(skill.id)}
-                                        >
-                                            {marked.includes(skill.id) ? '✔ Completed' : 'Mark as Complete'}
-                                        </button>
-                                    </div>
-                                </div>
-                                <p className="skill-description">{skill.description}</p>
-                                <a
-                                    href={skill.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="learn-more-button"
-                                >
-                                    Learn More
-                                </a>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            {/* Non-Favorite Skills Section */}
             <div className="skills-list">
-                {nonFavoriteSkills.map((skill) => (
+                {skillsList.map((skill) => (
                     <div key={skill.id} className="skill-item">
+                        <img src={skill.image} alt={skill.name} className="skill-image" />
                         <div className="skill-header">
                             <span className="skill-name">{skill.name}</span>
-                            <div className="skill-actions">
-                                <button
-                                    className={`action-button ${
-                                        favorites.includes(skill.id) ? 'favorite' : ''
-                                    }`}
-                                    onClick={() => toggleFavorite(skill.id)}
-                                >
-                                    {favorites.includes(skill.id) ? '★ Favorite' : '☆ Favorite'}
-                                </button>
-                                <button
-                                    className={`action-button ${
-                                        marked.includes(skill.id) ? 'marked' : ''
-                                    }`}
-                                    onClick={() => toggleMark(skill.id)}
-                                >
-                                    {marked.includes(skill.id) ? '✔ Completed' : 'Mark as Complete'}
-                                </button>
-                            </div>
                         </div>
                         <p className="skill-description">{skill.description}</p>
+                        <div className="skill-actions">
+                            <button
+                                className={`action-button ${favorites.includes(skill.id) ? 'favorite' : ''}`}
+                                onClick={() => toggleFavorite(skill.id)}
+                            >
+                                {favorites.includes(skill.id) ? '★ Favorite' : '☆ Favorite'}
+                            </button>
+                            <button
+                                className={`action-button ${marked.includes(skill.id) ? 'marked' : ''}`}
+                                onClick={() => toggleMark(skill.id)}
+                            >
+                                {marked.includes(skill.id) ? '✔ Completed' : 'Mark as Complete'}
+                            </button>
+                        </div>
                         <a
                             href={skill.link}
                             target="_blank"
