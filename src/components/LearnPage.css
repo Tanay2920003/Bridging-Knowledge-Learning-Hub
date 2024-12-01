@@ -1,33 +1,126 @@
+/* Main container styling */
 .learn-page {
-     text-align: center;
-   }
-   
-   .tab-container {
-     display: flex;
-     flex-direction: column;
-   }
-   
-   .tab-list {
-     list-style: none;
-     padding: 0;
-   }
-   
-   .tab-item {
-     padding: 10px;
-     cursor: pointer;
-   }
-   
-   .tab-item.active {
-     background-color: #f0f0f0;
-   }
-   
-   .tab-content {
-     flex: 1;
-     padding: 20px;
-   }
-   
-   .tab-panel {
-     padding: 20px;
-     border: 1px solid #ddd;
-     border-top: none;
-   }
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 30px;
+    max-width: 1200px; /* Widen the learn page */
+    width: 80%; /* Adjust the width */
+    margin: 0 auto; /* Center the page */
+    border-radius: 25px; /* Round corners */
+    overflow: hidden; /* Prevent overflow of content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* Ensures the page takes at least the full height of the viewport */
+}
+
+/* Course list container */
+.course-list {
+    margin-top: 20px;
+    flex-grow: 1; /* Allow the course list to take remaining space */
+    max-height: 500px; /* Set max height for scroll */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%;
+    padding-right: 10px; /* Add padding to avoid the scroll touching the content */
+}
+
+/* Course item styling */
+.course-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-item h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Subject list styling */
+.subject-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual subject item styling */
+.subject-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Subject info container */
+.subject-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+}
+
+/* Subject image styling */
+.subject-image {
+    width: 100px; /* Adjust image size */
+    height: 75px; /* Adjust image size */
+    border-radius: 5px;
+    margin-right: 15px; /* Space between image and subject name */
+}
+
+/* Mark button styling */
+.mark-button {
+    padding: 6px 12px;
+    font-size: 1rem;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mark-button:hover {
+    background-color: #e44d4d;
+}
+
+/* Course link styling */
+.course-link {
+    padding: 12px 25px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.course-link:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .subject-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mark-button {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .course-list {
+        max-height: none; /* Remove the height limit for small screens */
+    }
+
+    .subject-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
