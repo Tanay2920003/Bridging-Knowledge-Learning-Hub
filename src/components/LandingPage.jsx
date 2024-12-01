@@ -27,7 +27,7 @@ const LandingPage = () => {
 
                 {/* Additional Insights */}
                 <div className="additional-insights">
-                    <h2 className="insight-heading">What We Offer</h2>
+                    <h2 className="insight-heading">What We Offer!</h2>
 
                     <div className="insight-box">
                         <h3 className="insight-subheading">Previous Papers</h3>

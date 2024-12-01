@@ -119,9 +119,10 @@ body, html {
 /* Insight Heading */
 .insight-heading {
     font-size: 2rem;
-    color: #333;
+    color: #f3f0f0;
     margin-bottom: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 /* Box for each insight */
