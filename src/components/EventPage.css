@@ -1,7 +1,7 @@
 /* Overall page styling */
 .event-page {
      font-family: 'Arial', sans-serif;
-     background-color: #050303;
+     background-color: #05030300;
      padding: 100px 0;
      text-align: center;
      margin: 0;
@@ -46,7 +46,7 @@
    /* 3D carousel styling */
    .carousel {
      position: absolute;
-     top: -5%;
+     top: 0%;
      left: 0%;
      width: 100%;
      height: 100%;
