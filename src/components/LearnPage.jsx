@@ -62,8 +62,8 @@ const LearnPage = () => {
 
   return (
       <div className="learn-page">
-        <h1>Learn</h1>
-        <p>Learn more about our offerings here.</p>
+        <h1>Learn & Experience</h1>
+        <p>Learn more Technology and Projects</p>
 
         <div className="course-list">
           {courses.map((course, index) => (
