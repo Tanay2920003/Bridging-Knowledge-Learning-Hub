@@ -2,26 +2,36 @@
 .learn-page {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    padding: 30px;
-    max-width: 1200px; /* Widen the learn page */
-    width: 80%; /* Adjust the width */
-    margin: 0 auto; /* Center the page */
-    border-radius: 25px; /* Round corners */
-    overflow: hidden; /* Prevent overflow of content */
+    padding: 20px;
+    max-width: 1200px;
+    width: 90%; /* Adjust width for responsiveness */
+    margin: 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%; /* Ensures the page takes at least the full height of the viewport */
+    height: auto;
 }
 
 /* Course list container */
 .course-list {
     margin-top: 20px;
-    flex-grow: 1; /* Allow the course list to take remaining space */
-    max-height: 500px; /* Set max height for scroll */
+    flex-grow: 1;
+    max-height: 500px; /* Set a max height for scrolling */
     overflow-y: auto; /* Enable vertical scrolling */
     width: 100%;
-    padding-right: 10px; /* Add padding to avoid the scroll touching the content */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding-right: 10px; /* Padding to prevent overlap */
+}
+
+/* Hide scrollbar but keep scrolling functionality */
+.course-list::-webkit-scrollbar {
+    display: none;
+}
+.course-list {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 /* Course item styling */
@@ -29,14 +39,12 @@
     background-color: #fff;
     padding: 20px;
     margin-bottom: 25px;
-    border-radius: 12px; /* More rounded corners */
+    border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.course-item h3 {
-    font-size: 1.6rem;
-    color: #333;
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 /* Subject list styling */
@@ -49,40 +57,49 @@
 /* Individual subject item styling */
 .subject-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     padding: 12px 0;
     border-bottom: 1px solid #ddd;
+    width: 100%; /* Ensure full-width alignment */
 }
 
 /* Subject info container */
 .subject-info {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    width: 80%;
-    padding-left: 5px;
+    text-align: left; /* Align text to the left */
+    width: 100%;
+    gap: 15px; /* Spacing between elements */
 }
 
 /* Subject image styling */
 .subject-image {
-    width: 100px; /* Adjust image size */
-    height: 75px; /* Adjust image size */
+    width: 120px; /* Adjust image size */
+    height: 90px;
     border-radius: 5px;
-    margin-right: 15px; /* Space between image and subject name */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Subject details (name and buttons) */
+.subject-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 /* Mark button styling */
 .mark-button {
     padding: 6px 12px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     background-color: #ff4d4d;
     color: white;
     border: none;
-    margin-left: 10px;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 5px; /* Space between button and name */
 }
 
 .mark-button:hover {
@@ -91,12 +108,15 @@
 
 /* Course link styling */
 .course-link {
-    padding: 12px 25px;
+    padding: 10px 20px;
     background-color: #4caf50;
     color: white;
     text-decoration: none;
     border-radius: 6px;
     transition: background-color 0.3s ease;
+    margin-top: 10px; /* Space above the link */
+    text-align: center;
+    display: inline-block;
 }
 
 .course-link:hover {
@@ -104,54 +124,35 @@
 }
 
 /* Responsive design */
-@media screen and (max-width: 600px) {
-    /* Adjust course item styling */
-    .course-item {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-
-    /* Stack subject info vertically for smaller screens */
+@media screen and (max-width: 768px) {
     .subject-item {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .mark-button {
-        margin-top: 10px;
-        width: 100%;
-        font-size: 1rem;
-    }
-
-    .course-list {
-        max-height: none; /* Remove the height limit for small screens */
-        padding-right: 0; /* Adjust padding */
-        font-size: 1.3rem;
+        align-items: center;
         text-align: center;
-        
+    }
+
+    .subject-info {
+        flex-direction: column;
+        align-items: center;
     }
 
     .subject-image {
-        margin-right: 0;
         margin-bottom: 10px;
-        width: 80px; /* Reduce image size */
-        height: 60px; /* Adjust height */
     }
 
-    .course-link {
+    .mark-button, .course-link {
         width: 100%;
-        text-align: center;
-        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subject-image {
+        width: 100px; /* Smaller size for smaller screens */
+        height: 75px;
     }
 
-    /* Adjust text sizes for smaller screens */
-    .course-item h3 {
-        font-size: 1.3rem; /* Reduce heading size */
-    }
-
-    /* Adjust margins/paddings for better mobile readability */
-    .learn-page {
-        padding: 20px;
-        width: 100%;
+    .mark-button, .course-link {
+        font-size: 0.8rem;
+        padding: 8px 10px;
     }
 }
