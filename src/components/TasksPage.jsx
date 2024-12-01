@@ -56,9 +56,6 @@ const TasksPage = () => {
                             onChange={(e) => setNewTask(e.target.value)}
                             className="task-input"
                         />
-                        <button onClick={addTask} className="add-task-button2">
-                            Add Task
-                        </button>
                         <input
                             type="date"
                             value={taskDate}
