@@ -124,10 +124,7 @@
     background-color: #ddd;
   }
   
-  .logout-button {
-    background-color: #f44336;
-    color: white;
-  }
+
   
   
   
@@ -190,21 +187,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(237, 11, 11);
+  color: rgb(0, 0, 0);
   font-size: 16px;
   margin-bottom: 10px;
 }
 
 /* Upload Profile Picture Button */
-.upload-pic-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 14px;
-}
+
 
 .upload-pic-button label {
   cursor: pointer;
