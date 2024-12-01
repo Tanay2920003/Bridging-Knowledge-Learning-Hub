@@ -84,7 +84,7 @@ function App() {
                     <a href="/skills" className="nav-link">Skills</a>
                     <a href="/event" className="nav-link">Event</a>
                     <a href="/learn" className="nav-link">Learn</a>
-                    <a href="/previous-papers" className="nav-link">Previous Papers</a>
+                    <a href="/previous-papers" className="nav-link">PYQ</a>
                     <a href="/tasks" className="nav-link">Tasks</a>
                 </div>
             )}
