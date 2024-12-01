@@ -22,7 +22,7 @@ const LandingPage = () => {
                     <div className="service-info">
                         <p>Explore a wide range of study materials, previous papers, and tasks to help you excel in your studies. Connect with knowledge, explore opportunities, and learn with ease!</p>
                     </div>
-                    <button className="explore-button">Explore Now</button>
+                    <button className="explore-button">Explore Now !</button>
                 </div>
 
                 {/* Additional Insights */}
