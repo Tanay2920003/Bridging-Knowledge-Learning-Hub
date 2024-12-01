@@ -1,37 +1,80 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./RegisterPage.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
 const RegisterPage = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleRegister = (e) => {
-        e.preventDefault();
-        // Logic for registration (if any)
-        alert("Registered successfully!");
-        navigate("/");
-    };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const goToLogin = () => {
-        navigate("/");
-    };
+  const handleRegister = (e) => {
+    e.preventDefault();
+    // Registration logic (if any)
+    alert("Registered successfully!");
+    navigate("/");
+  };
 
-    return (
-        <div className="form-container">
-            <h2>Register</h2>
-            <form onSubmit={handleRegister}>
-                <input type="text" placeholder="Full Name" required />
-                <input type="email" placeholder="Gmail" required />
-                <input type="password" placeholder="Password" required />
-                <button type="submit">Register</button>
-            </form>
-            <p>
-                Already have an account?{" "}
-                <span onClick={goToLogin} className="link">
-          Login here
-        </span>
-            </p>
-        </div>
-    );
+  const goToLogin = () => {
+    navigate("/");
+  };
+
+  return (
+    <div className="register-container">
+      <div className="register-box">
+        <h2 className="register-title">Create Account</h2>
+        <p className="register-subtitle">Sign up for a student account</p>
+        <form className="register-form" onSubmit={handleRegister}>
+          <div className="input-group">
+            {name === "" && <FontAwesomeIcon icon={faUser} className="input-icon" />}
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            {email === "" && (
+              <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
+            )}
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            {password === "" && (
+              <FontAwesomeIcon icon={faLock} className="input-icon" />
+            )}
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button className="register-button" type="submit">
+            Register
+          </button>
+        </form>
+        <p className="login-link">
+          Already have an account?{" "}
+          <span onClick={goToLogin} className="link">
+            Login here
+          </span>
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default RegisterPage;
