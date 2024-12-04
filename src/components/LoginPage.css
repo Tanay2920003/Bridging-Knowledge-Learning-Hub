@@ -132,7 +132,6 @@ input {
   .container {
     flex-direction: column;
     height: auto; /* Allow container to adjust based on content */
-    padding: 20px; /* Padding around the container */
   }
 
   .image-container {
@@ -141,34 +140,5 @@ input {
 
   .login-container {
     padding: 20px;
-    width: 100%; /* Ensure form takes full width */
-  }
-
-  .login-container h1 {
-    font-size: 24px; /* Adjust font size for mobile */
-  }
-
-  input {
-    padding: 10px; /* Slightly smaller padding for mobile */
-    font-size: 14px; /* Adjust font size for smaller screens */
-  }
-
-  .login-button {
-    padding: 10px; /* Adjust button padding */
-    font-size: 14px; /* Adjust font size for mobile */
-  }
-
-  .password-container {
-    flex-direction: column; /* Stack password input and toggle button */
-    align-items: flex-start;
-  }
-
-  .toggle-password {
-    margin-top: 10px; /* Space out password toggle */
-    margin-left: 0; /* Remove left margin */
-  }
-
-  .register-link {
-    margin-top: 20px;
   }
 }
