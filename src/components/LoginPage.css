@@ -1,105 +1,90 @@
-/* General styles */
-body {
-  margin: 0;
-
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: #333;
-}
-
-.container {
-  display: flex;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-width: 9110px;
-  width: 110%;
-}
-
-/* Left side - Image */
-.image-container {
-  flex: 1;
-  background-color: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.illustration {
-  max-width: 125%;
-  height: auto;
-}
-
-/* Right side - Login Form */
 .login-container {
-  flex: 1;
-  padding: 30px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, );
+  width: 600px;
 }
 
-.login-container h1 {
-  margin-bottom: 20px;
-  font-size: 24px;
+.login-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
 }
 
-form {
-  display: flex;
+.login-title {
+  font-size: 35px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-label {
-  font-weight: bold;
+.login-subtitle {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.password-container {
+.login-form .input-group {
   display: flex;
   align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #fff;
 }
 
-.password-container input {
+.input-group input {
   flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
 }
 
-.toggle-password {
-  margin-left: 10px;
-  cursor: pointer;
-  font-size: 18px;
+.input-group .input-icon {
+  color: #666;
+  margin-right: 10px;
+}
+
+.input-group input:focus ~ .input-icon {
+  display: none; /* Ensures icon disappears when typing */
 }
 
 .login-button {
-  background: #007bff;
+  background-color: #000dff;
   color: #fff;
-  padding: 10px;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 20px;
   cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .login-button:hover {
-  background: #0056b3;
+  background-color: #6b73ff;
 }
 
-.forgot-password {
-  text-align: center;
+.error-message {
+  color: red;
   margin-top: 10px;
-  color: #007bff;
-  text-decoration: none;
 }
 
-.forgot-password:hover {
+.register-link {
+  margin-top: 15px;
+  font-size: 15px;
+  color: black;
+}
+
+.register-link .link {
+  cursor: pointer;
   text-decoration: underline;
 }
