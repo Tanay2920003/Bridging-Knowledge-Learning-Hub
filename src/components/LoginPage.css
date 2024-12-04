@@ -1,90 +1,105 @@
-.login-container {
+/* General styles */
+body {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, );
-  width: 600px;
-}
-
-.login-box {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-  backdrop-filter: blur(10px);
-}
-
-.login-title {
-  font-size: 35px;
+  height: 100vh;
   color: #333;
-  margin-bottom: 10px;
 }
 
-.login-subtitle {
-  font-size: 20px;
-  color: #666;
+.container {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 9110px;
+  width: 110%;
+}
+
+/* Left side - Image */
+.image-container {
+  flex: 1;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration {
+  max-width: 125%;
+  height: auto;
+}
+
+/* Right side - Login Form */
+.login-container {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-container h1 {
   margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
 }
 
-.login-form .input-group {
+form {
+  display: flex;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.password-container {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  padding: 10px;
-  background: #fff;
 }
 
-.input-group input {
+.password-container input {
   flex: 1;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  padding: 5px;
 }
 
-.input-group .input-icon {
-  color: #666;
-  margin-right: 10px;
-}
-
-.input-group input:focus ~ .input-icon {
-  display: none; /* Ensures icon disappears when typing */
+.toggle-password {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .login-button {
-  background-color: #000dff;
+  background: #007bff;
   color: #fff;
+  padding: 10px;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 20px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
 }
 
 .login-button:hover {
-  background-color: #6b73ff;
+  background: #0056b3;
 }
 
-.error-message {
-  color: red;
+.forgot-password {
+  text-align: center;
   margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
 }
 
-.register-link {
-  margin-top: 15px;
-  font-size: 15px;
-  color: black;
-}
-
-.register-link .link {
-  cursor: pointer;
+.forgot-password:hover {
   text-decoration: underline;
 }
