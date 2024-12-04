@@ -1,35 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./LoginPage.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import "./LoginPage.css"; // Make sure to create the CSS file for styling.
 
 const LoginPage = () => {
-  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
-  // Temporary credentials
-  const TEMP_EMAIL = "test@example.com";
-  const TEMP_PASSWORD = "password123";
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
-
-  // Handle password visibility toggle
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-  };
-
-  // Handle login form submission
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (email === TEMP_EMAIL && password === TEMP_PASSWORD) {
-      setError("");
-      navigate("/landing"); // Redirect to landing page after successful login
-    } else {
-      setError("Invalid email or password!");
-    }
   };
 
   return (
@@ -46,30 +22,20 @@ const LoginPage = () => {
       {/* Right Side - Login Form */}
       <div className="login-container">
         <h1>Student Login</h1>
-        <form onSubmit={handleLogin}>
-          <div className="input-group">
-            {email === "" && (
-              <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
-            )}
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
+        <form>
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your Email"
+          />
 
-          <div className="input-group">
-            {password === "" && (
-              <FontAwesomeIcon icon={faLock} className="input-icon" />
-            )}
+          <label htmlFor="password">Password</label>
+          <div className="password-container">
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
+              id="password"
+              placeholder="Enter your password"
             />
             <span
               className="toggle-password"
@@ -83,14 +49,10 @@ const LoginPage = () => {
             Log In
           </button>
 
-          {error && <p className="error-message">{error}</p>}
-
-          <p className="register-link">
-            New user?{" "}
-            <span onClick={() => navigate("/register")} className="link">
-              Register here
-            </span>
-          </p>
+          {/* New User Link */}
+          <h4>New User? <a href="/register" className="new-user-link">
+             Register Here
+          </a></h4>
         </form>
       </div>
     </div>
