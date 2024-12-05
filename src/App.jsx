@@ -9,47 +9,15 @@ import EventPage from "./components/EventPage";
 import PreviousPapersPage from "./components/PreviousPapersPage";
 import TasksPage from "./components/TasksPage";
 import ProfilePage from "./components/ProfilePage";
-import PrivateRoute from "./components/PrivateRoute";  // Import PrivateRoute
-import AppBar from './AppBar';
-import { supabase } from './supabaseClient';  // Import Supabase client
 import "./App.css";
+import AppBar from './AppBar';
 
 function App() {
     const vantaRef = useRef(null);
     const location = useLocation();
     const [showMenu, setShowMenu] = useState(false);
     const navigate = useNavigate();
-    const [user, setUser] = useState(null);
 
-    // Check for user session on load and listen for auth state changes
-    useEffect(() => {
-        // Fetch the current session from localStorage or sessionStorage
-        const getSession = async () => {
-            const { data: session, error } = await supabase.auth.getSession();  // Fetch the current session
-            if (error) {
-                console.error('Error fetching session:', error);
-                setUser(null);  // Reset user state on error
-                return;
-            }
-            setUser(session?.user || null);  // Set user if session is available
-        };
-
-        getSession();  // Call the function to set user session
-
-        // Listen for auth state changes and update user state accordingly
-        const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
-            setUser(session?.user || null);  // Update user state on auth state change
-        });
-
-        // Cleanup function to unsubscribe the listener
-        return () => {
-            if (authListener?.unsubscribe) {
-                authListener.unsubscribe();  // Ensure this exists before calling unsubscribe
-            }
-        };
-    }, []);  // Empty dependency array ensures this effect only runs once
-
-    // Initialize Vanta effect
     useEffect(() => {
         const vantaEffect = window.VANTA.BIRDS({
             el: vantaRef.current,
@@ -69,10 +37,8 @@ function App() {
         };
     }, []);
 
-    // Handle Logout
-    const handleLogout = async () => {
-        await supabase.auth.signOut();  // Sign out using Supabase
-        navigate("/");  // Redirect to login page after logout
+    const handleLogout = () => {
+        navigate("/"); // Navigate back to the login page
     };
 
     // Automatically hide the dropdown menu after 3 seconds
@@ -82,7 +48,7 @@ function App() {
                 setShowMenu(false);
             }, 3000);
 
-            return () => clearTimeout(timeout);  // Cleanup timeout on component unmount or showMenu change
+            return () => clearTimeout(timeout); // Cleanup timeout on component unmount or showMenu change
         }
     }, [showMenu]);
 
@@ -92,44 +58,21 @@ function App() {
                 <Routes>
                     <Route path="/" element={<LoginPage />} />
                     <Route path="/register" element={<RegisterPage />} />
-
-                    {/* Protect Routes */}
-                    <Route
-                        path="/landing"
-                        element={<PrivateRoute user={user}><LandingPage /></PrivateRoute>}
-                    />
-                    <Route
-                        path="/profile"
-                        element={<PrivateRoute user={user}><ProfilePage /></PrivateRoute>}
-                    />
-                    <Route
-                        path="/skills"
-                        element={<PrivateRoute user={user}><SkillsPage /></PrivateRoute>}
-                    />
-                    <Route
-                        path="/learn"
-                        element={<PrivateRoute user={user}><LearnPage /></PrivateRoute>}
-                    />
-                    <Route
-                        path="/event"
-                        element={<PrivateRoute user={user}><EventPage /></PrivateRoute>}
-                    />
-                    <Route
-                        path="/previous-papers"
-                        element={<PrivateRoute user={user}><PreviousPapersPage /></PrivateRoute>}
-                    />
-                    <Route
-                        path="/tasks"
-                        element={<PrivateRoute user={user}><TasksPage /></PrivateRoute>}
-                    />
+                    <Route path="/landing" element={<LandingPage />} />
+                    <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/skills" element={<SkillsPage />} />
+                    <Route path="/learn" element={<LearnPage />} />
+                    <Route path="/event" element={<EventPage />} />
+                    <Route path="/previous-papers" element={<PreviousPapersPage />} />
+                    <Route path="/tasks" element={<TasksPage />} />
                 </Routes>
             </div>
 
             {/* Profile Circle and Dropdown Menu */}
-            {location.pathname !== "/" && location.pathname !== "/register" && user && (
+            {location.pathname !== "/" && location.pathname !== "/register" && (
                 <>
                     <div className="profile-circle" onClick={() => setShowMenu(!showMenu)}>
-                        <span className="profile-initial">{user?.email?.[0].toUpperCase()}</span>
+                        <span className="profile-initial">S</span>
                     </div>
 
                     {/* Dropdown Menu */}
@@ -143,11 +86,10 @@ function App() {
                     )}
                 </>
             )}
-
             <AppBar />
 
             {/* Bottom Navbar */}
-            {location.pathname !== "/" && location.pathname !== "/register" && user && (
+            {location.pathname !== "/" && location.pathname !== "/register" && (
                 <div className="bottom-navbar">
                     <a href="/landing" className="nav-link">Home</a>
                     <a href="/skills" className="nav-link">Skills</a>
